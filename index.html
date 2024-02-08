@@ -653,10 +653,20 @@
 		document.addEventListener("contextmenu",(function(e){e.preventDefault()})),document.addEventListener("keydown",(function(e){!e.ctrlKey||"c"!==e.key&&"C"!==e.key||e.preventDefault()}));
 	</script>
 
-	 <script>
+	  <script>
+		  document.addEventListener('keydown', function(event) {
+    // Check if Ctrl (or Cmd on Mac) + U is pressed
+    if ((event.ctrlKey || event.metaKey) && event.key === 'u') {
+        // Prevent the default action (viewing page source)
+        event.preventDefault();
+    }
+});
+
 		
-		document.addEventListener("contextmenu",(function(e){e.preventDefault()})),document.addEventListener("keydown",(function(e){!e.ctrlKey||"u"!==e.key&&"U"!==e.key||e.preventDefault()}));
+	
 	</script>
+
+	
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
