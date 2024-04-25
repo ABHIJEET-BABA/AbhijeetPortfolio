@@ -699,23 +699,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/php-email-form/validate.js"></script>
 
-  <script>
-		
-		document.addEventListener("contextmenu",(function(e){e.preventDefault()})),document.addEventListener("keydown",(function(e){!e.ctrlKey||"c"!==e.key&&"C"!==e.key||e.preventDefault()}));
-	</script>
-
-	  <script>
-		  document.addEventListener('keydown', function(event) {
-    // Check if Ctrl (or Cmd on Mac) + U is pressed
-    if ((event.ctrlKey || event.metaKey) && event.key === 'u') {
-        // Prevent the default action (viewing page source)
+ <script>
+document.addEventListener("keydown", function(event) {
+    // Disable Ctrl+U
+    if ((event.ctrlKey && event.key === 'u') || 
+        // Disable Cmd+D (Mac) or Ctrl+D (Windows)
+        (event.metaKey && event.key === 'd') ||
+        // Disable Cmd+M (Mac)
+        (event.metaKey && event.key === 'm')) {
         event.preventDefault();
     }
 });
-
-		
-	
-	</script>
+</script>
 
 	
 
